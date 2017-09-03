@@ -46,16 +46,16 @@ class nicoJS
 
 	##
 	# コメントを送信
-	# @param text      : コメント
-	# @param color     : 色[option]
-	# @param font_size : フォントサイズ[option]
-	# @param layout    : 位置[option]
+	# @param params.text      : コメント
+	# @param params.color     : 色[option]
+	# @param params.font_size : フォントサイズ[option]
+	# @param params.layout    : 位置[option]
 	##
-	send: (text, color, font_size, layout) ->
-		lay       = layout    || 'naka'
-		font_size = font_size || @font_size
-		color     = color     || @color
-		text      = text      || ''
+	send: (params) ->
+		lay       = params.layout    || 'naka'
+		font_size = params.font_size || @font_size
+		color     = params.color     || @color
+		text      = params.text      || ''
 		ele       = document.createElement 'div'
 
 		ele.innerHTML        = text
